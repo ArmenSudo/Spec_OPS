@@ -93,7 +93,15 @@ n = 600851475143
 print(primeFactors(n))
 
 # 9
-
+num = 0
+for i in range(999, 100, -1):
+    for j in range(i, 100, -1):
+        x = i * j
+        if x > num:
+            s = str(i * j)
+            if s == s[::-1]:
+                num = i * j
+print(num)
 
 # 10
 def primeFactors(n):
@@ -121,7 +129,12 @@ print(prime(20))
 
 
 # 11
-
+sum1 = 0
+sum2 = 0
+for i in range(1, 101):
+    sum1 += i
+    sum2 += i * i
+print(sum1 * sum1 - sum2)
 
 
 # 12
