@@ -33,7 +33,24 @@ class Solution:
             if val == max_numb:
                 sizes.append(len(nums) - nums[::-1].index(key) - nums.index(key))
         return min(sizes)
+    
+    
+class Solution(object):
+    def findShortestSubArray(self, nums):
+        left, right, count = {}, {}, {}
+        for i, x in enumerate(nums):
+            if x not in left: left[x] = i
+            right[x] = i
+            count[x] = count.get(x, 0) + 1
+        ans = len(nums)
+        degree = max(count.values())
+        for x in count:
+            if count[x] == degree:
+                ans = min(ans, right[x] - left[x] + 1)
 
+        return ans
+
+    
 # 4
 class Solution:
     def sortArrayByParity(self, nums: List[int]) -> List[int]:
@@ -43,6 +60,8 @@ class Solution:
                 nums[index], nums[ind] = nums[ind], nums[index]
                 index += 1
         return nums
+    
+ 
 
 # 5
 class Solution:
