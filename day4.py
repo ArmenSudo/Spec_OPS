@@ -83,6 +83,11 @@ class Solution:
                 return haystack.index(needle)
             except:
                 return -1
+            
+class Solution:
+    def strStr(self, haystack: str, needle: str) -> int:
+        return haystack.find(needle)
+    
 
 # 7
 class Solution:
