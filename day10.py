@@ -18,8 +18,7 @@ class Solution:
         """
         Do not return anything, modify nums1 in-place instead.
         """
-        for x in range(m, m+n):
-            nums1[x] = nums2[x-m]
+        nums1[m:] = nums2[:]
         return nums1.sort()
       
 # 3
